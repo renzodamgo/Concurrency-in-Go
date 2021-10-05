@@ -1,10 +1,18 @@
-# Go
+# Programación Concurrente y Distribuida
+## Tabla de Contenido
+- [Sesion 01](#sesion-01)
+  * [Go](#go)
+  * [Inicializar](#inicializar)
+  * [Ingresar datos](#ingresar-datos)
+
+# Sesion 01
+## Go
 Correr un programa go
 ```go
 go run sesion01/e01.go
 ```
 
-# Inicializar:
+## Inicializar
 Inicializar con el tipo de dato:
 ```go
 var x string = "Hola a todos";
@@ -29,7 +37,7 @@ Inicializar constantes:
 const igv float64 = 18.0
 ```
 
-# Ingresar datos
+## Ingresar datos
 Forma 1:
 ```go
 fmt.Print("Ingrese un número: ")
