@@ -14,3 +14,17 @@ Inicializar asignando el tipo de dato de la variable
 //Se le asigna el tipo int por que la variable es int
 x := 20;
 ```
+Asignar varias variables
+```go
+var(
+  nombre string
+  edad int
+)
+
+nombre = "Juan"
+edad = 25
+```
+Inicializar constantes
+```go
+const igv float64 = 18.0
+```
