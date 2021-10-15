@@ -64,7 +64,27 @@ func agregarAlumno(response http.ResponseWriter, request *http.Request) {
 	// Validar que la posicion se realiza por el método POST
 	if request.Method == "POST" {
 		if request.Header.Get("Content-Type") == "application/json" {
-			ioutil.ReadAll(request.Body)
+			cuerpoMsg,err := ioutil.ReadAll(request.Body)
+
+			//recuperar el cuerpo del mensaje
+			if err !=nil{
+				http.Error(response,"Error interno al leer el body", http.StatusInternalServerError)
+			}
+			// lógica para agreagar alumno
+			var oAlumno Alumno
+			//decodificar
+			json.Unmarshal(cuerpoMsg,&oAlumno)
+
+			listaAlumnos = append(listaAlumnos,oAlumno)
+			// return el mensaje satisfactiorio
+			response.Header().Set("Content-Type","application/json")
+
+			io.WriteString(response,`
+				{
+					"respuesta":"Se agrega el alumno nuevo."
+				}
+			`)
+
 		} else {
 			http.Error(response, "Contenido Invállido", http.StatusBadRequest)
 		}
